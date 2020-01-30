@@ -1,1 +1,0 @@
-### More information at [Golang Pubsub wiki](https://gitlab.sendo.vn/core/pubsub/wikis/example/Golang-SDK)
