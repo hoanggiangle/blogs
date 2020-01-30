@@ -1,0 +1,14 @@
+*.pb*.go
+*.swagger.json
+.idea
+
+samples/grpc/.build/
+samples/grpc/grpc
+samples/gin-rest/gin-rest
+
+.DS_STORE
+docker-compose.*.yaml
+
+go.sum
+
+vendor

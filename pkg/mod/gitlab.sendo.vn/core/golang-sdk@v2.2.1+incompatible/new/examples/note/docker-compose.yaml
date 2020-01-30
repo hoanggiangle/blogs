@@ -1,0 +1,23 @@
+version: "3.2"
+
+services:
+  envoy:
+    build:
+      context: .
+      dockerfile: ./deploy/Dockerfile
+    ports:
+    - "9901:9901"
+    - "9910:9910"
+    expose:
+    - "9910"
+    volumes:
+    - ./deploy/envoy.yaml:/etc/envoy/envoy.yaml
+
+  app:
+    build:
+      context: .
+      dockerfile: ./deploy/Dockerfile-app
+    ports:
+    - "8000:8000"
+    expose:
+    - "10000"

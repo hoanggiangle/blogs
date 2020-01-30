@@ -1,0 +1,11 @@
+FROM golang:latest as builder
+RUN mkdir $GOPATH/src/app
+ADD . $GOPATH/src/app/
+RUN ls $GOPATH/src/app/
+WORKDIR $GOPATH/src/app
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o app .
+
+FROM alpine:latest
+WORKDIR /app/
+COPY --from=builder $GOPATH/src/app .
+CMD ["./app"]

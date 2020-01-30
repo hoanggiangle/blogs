@@ -1,0 +1,11 @@
+version: "3.2"
+
+services:
+  consul:
+    command: agent -ui -server -bind 0.0.0.0 -client 0.0.0.0 -dev
+    image: consul:latest
+    ports:
+    - "8300:8300"
+    - "8400:8400"
+    - "8500:8500"
+    - "8600:53/udp"
